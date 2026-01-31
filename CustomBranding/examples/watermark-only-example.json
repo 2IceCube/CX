@@ -1,0 +1,35 @@
+{
+  "_description": "Watermark Only Configuration - Add custom watermark while keeping footer",
+  
+  "branding": {
+    "removeWatermark": true,
+    "removeFooter": false,
+    "customFooter": {
+      "enabled": false
+    },
+    "customWatermark": {
+      "enabled": true,
+      "text": "Powered by Acme Infrastructure",
+      "position": "bottom-left",
+      "opacity": 0.5
+    },
+    "logo": {
+      "enabled": false
+    },
+    "copyright": {
+      "enabled": false
+    }
+  },
+
+  "styling": {
+    "watermarkColor": "#718096",
+    "customCSS": ""
+  },
+
+  "advanced": {
+    "hideAllBranding": false,
+    "preserveLoginPage": true,
+    "applyToAdminPanel": true,
+    "applyToClientArea": true
+  }
+}

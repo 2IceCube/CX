@@ -1,0 +1,23 @@
+{
+  "id": "custom-branding",
+  "name": "Custom Branding Plugin",
+  "description": "Remove default FeatherPanel watermarks and footers, and add custom branding elements to your panel",
+  "version": "1.0.0",
+  "author": "MysticsSystems",
+  "main": "src/index.js",
+  "dependencies": {
+    "featherpanel": ">=1.0.0"
+  },
+  "permissions": [
+    "read:config",
+    "write:config",
+    "modify:ui"
+  ],
+  "hooks": [
+    "ui.footer",
+    "ui.watermark",
+    "ui.branding"
+  ],
+  "category": "customization",
+  "tags": ["branding", "white-label", "customization", "watermark", "footer"]
+}

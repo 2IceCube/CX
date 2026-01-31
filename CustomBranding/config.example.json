@@ -1,0 +1,56 @@
+{
+  "_comment": "Example Configuration File - Copy and customize as needed",
+  "_examples": {
+    "minimal": "See minimal-example.json for removing branding without customization",
+    "full": "See full-example.json for complete custom branding",
+    "footer-only": "See footer-only-example.json for just footer customization"
+  },
+
+  "branding": {
+    "removeWatermark": true,
+    "removeFooter": true,
+    
+    "customFooter": {
+      "enabled": true,
+      "text": "© {year} Your Company Name. All rights reserved. | Need support? Contact us!",
+      "link": "https://yourcompany.com",
+      "alignment": "center"
+    },
+    
+    "customWatermark": {
+      "enabled": false,
+      "text": "Powered by Your Brand",
+      "position": "bottom-right",
+      "opacity": 0.7
+    },
+    
+    "logo": {
+      "enabled": false,
+      "url": "https://yourcompany.com/assets/logo.png",
+      "altText": "Your Company Logo",
+      "width": "150px",
+      "height": "auto"
+    },
+    
+    "copyright": {
+      "enabled": true,
+      "text": "Your Company Name",
+      "year": "auto"
+    }
+  },
+
+  "styling": {
+    "footerBackgroundColor": "#1a1a1a",
+    "footerTextColor": "#ffffff",
+    "footerLinkColor": "#4a9eff",
+    "watermarkColor": "#666666",
+    "customCSS": ""
+  },
+
+  "advanced": {
+    "hideAllBranding": false,
+    "preserveLoginPage": false,
+    "applyToAdminPanel": true,
+    "applyToClientArea": true
+  }
+}

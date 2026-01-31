@@ -106,6 +106,7 @@ cp -r examples "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  example
 cp LICENSE "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  LICENSE (MIT license)"
 cp README.md "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  README.md (main documentation)"
 cp README_PHP.md "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  README_PHP.md (PHP/v2 documentation)"
+cp PACKAGE_GUIDE.md "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  PACKAGE_GUIDE.md (package guide)"
 cp INSTALLATION.md "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  INSTALLATION.md (installation guide)"
 cp QUICKSTART.md "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  QUICKSTART.md (quick start guide)"
 cp CHANGELOG.md "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  CHANGELOG.md (version history)"

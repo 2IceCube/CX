@@ -1,0 +1,71 @@
+plugin:
+  name: "Custom Branding Plugin"
+  identifier: "custom_branding"
+  description: "Remove default watermarks and footers, add custom branding"
+  version: "1.0.0"
+  target: "v2"
+  author: ["2IceCube"]
+  icon: "https://example.com/icon.png"
+  flags:
+    - "hasEvents"
+    - "hasInstallScript"
+  dependencies:
+    - "php=8.1"
+  requiredConfigs:
+    - "enable_watermark_removal"
+    - "enable_footer_removal"
+
+config:
+  - name: "enable_watermark_removal"
+    display_name: "Enable Watermark Removal"
+    type: "boolean"
+    description: "Remove all default FeatherPanel watermarks"
+    required: true
+    default: "true"
+  
+  - name: "enable_footer_removal"
+    display_name: "Enable Footer Removal"
+    type: "boolean"
+    description: "Remove all default FeatherPanel footer elements"
+    required: true
+    default: "true"
+  
+  - name: "custom_footer_text"
+    display_name: "Custom Footer Text"
+    type: "text"
+    description: "Custom text to display in footer"
+    required: false
+    validation:
+      max: 200
+      message: "Footer text must be less than 200 characters"
+    default: ""
+  
+  - name: "custom_watermark_text"
+    display_name: "Custom Watermark Text"
+    type: "text"
+    description: "Custom watermark or branding text"
+    required: false
+    validation:
+      max: 100
+      message: "Watermark text must be less than 100 characters"
+    default: ""
+  
+  - name: "custom_logo_url"
+    display_name: "Custom Logo URL"
+    type: "url"
+    description: "URL for custom logo image"
+    required: false
+    validation:
+      regex: "/^https:\\/\\/.+/"
+      message: "Must be a valid HTTPS URL"
+    default: ""
+  
+  - name: "copyright_text"
+    display_name: "Copyright Text"
+    type: "text"
+    description: "Custom copyright information"
+    required: false
+    validation:
+      max: 150
+      message: "Copyright text must be less than 150 characters"
+    default: ""

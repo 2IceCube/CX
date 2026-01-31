@@ -1,0 +1,39 @@
+{
+  "_description": "Footer Only Configuration - Just replace the footer, keep everything else default",
+  
+  "branding": {
+    "removeWatermark": false,
+    "removeFooter": true,
+    "customFooter": {
+      "enabled": true,
+      "text": "© {year} Acme Hosting Ltd. All rights reserved.",
+      "link": "https://acmehosting.com",
+      "alignment": "center"
+    },
+    "customWatermark": {
+      "enabled": false
+    },
+    "logo": {
+      "enabled": false
+    },
+    "copyright": {
+      "enabled": true,
+      "text": "Acme Hosting Ltd.",
+      "year": "auto"
+    }
+  },
+
+  "styling": {
+    "footerBackgroundColor": "#2d3748",
+    "footerTextColor": "#e2e8f0",
+    "footerLinkColor": "#4299e1",
+    "customCSS": ""
+  },
+
+  "advanced": {
+    "hideAllBranding": false,
+    "preserveLoginPage": false,
+    "applyToAdminPanel": true,
+    "applyToClientArea": true
+  }
+}

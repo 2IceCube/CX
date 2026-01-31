@@ -1,0 +1,177 @@
+/**
+ * Custom Branding Plugin - Additional CSS
+ * Override FeatherPanel default branding styles
+ */
+
+/* Remove default FeatherPanel watermarks and credits */
+.featherpanel-watermark,
+.featherpanel-credit,
+.feather-watermark,
+.fp-watermark,
+.powered-by-featherpanel,
+.powered-by-feather,
+[data-feather-watermark],
+[data-feather-credit] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Remove default footer branding */
+footer .featherpanel-branding,
+footer .feather-branding,
+footer .default-branding,
+footer [class*="feather-credit"],
+footer [class*="fp-credit"],
+.footer-branding {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Custom footer container */
+.custom-branding-footer {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+}
+
+.custom-branding-footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.custom-branding-footer-text {
+    color: #ffffff;
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+.custom-branding-footer-link {
+    color: #4a9eff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.custom-branding-footer-link:hover {
+    color: #6bb3ff;
+    text-decoration: underline;
+}
+
+/* Custom watermark */
+.custom-watermark {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    user-select: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.custom-watermark.bottom-right {
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.custom-watermark.bottom-left {
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.custom-watermark.top-right {
+    top: 1rem;
+    right: 1rem;
+}
+
+.custom-watermark.top-left {
+    top: 1rem;
+    left: 1rem;
+}
+
+/* Custom logo styling */
+.custom-branding-logo {
+    display: inline-block;
+    max-width: 200px;
+    height: auto;
+}
+
+.custom-branding-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Copyright text styling */
+.custom-copyright {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-branding-footer {
+        padding: 1rem;
+    }
+
+    .custom-branding-footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .custom-watermark {
+        font-size: 0.75rem;
+    }
+
+    .custom-watermark.bottom-right,
+    .custom-watermark.bottom-left {
+        bottom: 0.5rem;
+    }
+
+    .custom-watermark.bottom-right,
+    .custom-watermark.top-right {
+        right: 0.5rem;
+    }
+
+    .custom-watermark.bottom-left,
+    .custom-watermark.top-left {
+        left: 0.5rem;
+    }
+}
+
+/* Ensure proper spacing when footer is removed */
+body.no-footer {
+    padding-bottom: 0;
+}
+
+main.no-footer-spacing {
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+}
+
+/* Hide branding on login page if configured */
+body.login-page .featherpanel-branding {
+    display: none !important;
+}
+
+/* Admin panel specific overrides */
+.admin-panel .featherpanel-branding,
+.admin-panel [class*="fp-credit"],
+.admin-panel [data-feather-watermark] {
+    display: none !important;
+}
+
+/* Client area specific overrides */
+.client-area .featherpanel-branding,
+.client-area [class*="fp-credit"],
+.client-area [data-feather-watermark] {
+    display: none !important;
+}

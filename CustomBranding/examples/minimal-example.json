@@ -1,0 +1,31 @@
+{
+  "_description": "Minimal Configuration - Remove all branding without adding custom elements",
+  
+  "branding": {
+    "removeWatermark": true,
+    "removeFooter": true,
+    "customFooter": {
+      "enabled": false
+    },
+    "customWatermark": {
+      "enabled": false
+    },
+    "logo": {
+      "enabled": false
+    },
+    "copyright": {
+      "enabled": false
+    }
+  },
+
+  "styling": {
+    "customCSS": ""
+  },
+
+  "advanced": {
+    "hideAllBranding": true,
+    "preserveLoginPage": false,
+    "applyToAdminPanel": true,
+    "applyToClientArea": true
+  }
+}

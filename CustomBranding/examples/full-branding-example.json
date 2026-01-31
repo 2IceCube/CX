@@ -1,0 +1,47 @@
+{
+  "_description": "Full Branding Configuration - Complete customization with all features enabled",
+  
+  "branding": {
+    "removeWatermark": true,
+    "removeFooter": true,
+    "customFooter": {
+      "enabled": true,
+      "text": "© {year} Acme Hosting Services. Trusted by thousands. | 24/7 Support Available",
+      "link": "https://acmehosting.com",
+      "alignment": "center"
+    },
+    "customWatermark": {
+      "enabled": true,
+      "text": "Secured by Acme",
+      "position": "bottom-right",
+      "opacity": 0.6
+    },
+    "logo": {
+      "enabled": true,
+      "url": "https://acmehosting.com/assets/logo-white.png",
+      "altText": "Acme Hosting - Premium Game Server Hosting",
+      "width": "180px",
+      "height": "auto"
+    },
+    "copyright": {
+      "enabled": true,
+      "text": "Acme Hosting Services Ltd.",
+      "year": "auto"
+    }
+  },
+
+  "styling": {
+    "footerBackgroundColor": "#0f172a",
+    "footerTextColor": "#e2e8f0",
+    "footerLinkColor": "#38bdf8",
+    "watermarkColor": "#64748b",
+    "customCSS": ".custom-footer { border-top: 2px solid #38bdf8; padding: 2rem 1rem; } .custom-watermark { font-family: 'Segoe UI', sans-serif; font-weight: 600; }"
+  },
+
+  "advanced": {
+    "hideAllBranding": false,
+    "preserveLoginPage": false,
+    "applyToAdminPanel": true,
+    "applyToClientArea": true
+  }
+}

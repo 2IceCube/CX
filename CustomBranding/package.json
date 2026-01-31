@@ -1,0 +1,36 @@
+{
+  "name": "featherpanel-custom-branding",
+  "version": "1.0.0",
+  "description": "Remove default FeatherPanel watermarks and footers, and add custom branding elements",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"No tests specified yet\" && exit 0",
+    "lint": "eslint src/",
+    "format": "prettier --write \"src/**/*.js\""
+  },
+  "keywords": [
+    "featherpanel",
+    "plugin",
+    "addon",
+    "branding",
+    "white-label",
+    "customization",
+    "watermark",
+    "footer",
+    "mysticssystems"
+  ],
+  "author": "MysticsSystems",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2IceCube/CX"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "peerDependencies": {
+    "featherpanel": ">=1.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

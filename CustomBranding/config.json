@@ -1,0 +1,43 @@
+{
+  "branding": {
+    "removeWatermark": true,
+    "removeFooter": true,
+    "customFooter": {
+      "enabled": true,
+      "text": "© 2024 Your Company Name. All rights reserved.",
+      "link": "https://yourcompany.com",
+      "alignment": "center"
+    },
+    "customWatermark": {
+      "enabled": false,
+      "text": "Powered by Your Brand",
+      "position": "bottom-right",
+      "opacity": 0.7
+    },
+    "logo": {
+      "enabled": false,
+      "url": "",
+      "altText": "Company Logo",
+      "width": "150px",
+      "height": "auto"
+    },
+    "copyright": {
+      "enabled": true,
+      "text": "Your Company Name",
+      "year": "auto"
+    }
+  },
+  "styling": {
+    "footerBackgroundColor": "#1a1a1a",
+    "footerTextColor": "#ffffff",
+    "footerLinkColor": "#4a9eff",
+    "watermarkColor": "#666666",
+    "customCSS": ""
+  },
+  "advanced": {
+    "hideAllBranding": false,
+    "preserveLoginPage": false,
+    "applyToAdminPanel": true,
+    "applyToClientArea": true
+  }
+}

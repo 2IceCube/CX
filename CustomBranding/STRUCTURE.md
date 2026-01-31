@@ -7,9 +7,11 @@ CustomBranding/
 ├── .gitignore                          # Git ignore rules
 ├── LICENSE                             # MIT License
 ├── README.md                           # Main documentation (345 lines)
+├── BUILD.md                            # Build guide (creating .fpa packages)
 ├── INSTALLATION.md                     # Installation guide (230 lines)
 ├── QUICKSTART.md                       # Quick start guide (96 lines)
 ├── CHANGELOG.md                        # Version history
+├── build.sh                            # Build script for creating .fpa packages
 ├── addon.json                          # Plugin manifest
 ├── package.json                        # Node.js package file
 ├── config.json                         # Default configuration
@@ -18,14 +20,34 @@ CustomBranding/
 │   └── index.js                       # Main plugin logic (326 lines)
 ├── assets/
 │   └── custom-branding.css            # CSS overrides (177 lines)
-└── examples/
-    ├── minimal-example.json           # Remove all branding
-    ├── footer-only-example.json       # Custom footer only
-    ├── full-branding-example.json     # Complete customization
-    └── watermark-only-example.json    # Custom watermark only
+├── examples/
+│   ├── minimal-example.json           # Remove all branding
+│   ├── footer-only-example.json       # Custom footer only
+│   ├── full-branding-example.json     # Complete customization
+│   └── watermark-only-example.json    # Custom watermark only
+├── build/                              # Build artifacts (created by build.sh)
+│   └── CustomBranding/                # Temporary build directory
+└── dist/                               # Distribution files (created by build.sh)
+    └── CustomBranding-v1.0.0.fpa      # Packaged plugin archive
 ```
 
 ## File Descriptions
+
+### Build Files
+
+**build.sh**
+- Automated build script for creating .fpa packages
+- Creates ZIP archive with proper structure
+- Validates required files
+- Outputs to dist/ directory
+- Usage: `./build.sh` or `./build.sh --verbose`
+
+**BUILD.md**
+- Complete guide for building .fpa packages
+- Explains .fpa file format
+- Manual and automated build instructions
+- Troubleshooting build issues
+- Distribution and versioning guide
 
 ### Core Files
 

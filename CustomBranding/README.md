@@ -16,7 +16,44 @@ A powerful plugin for FeatherPanel (by MysticsSystems) that removes all default 
 
 ## Installation
 
-### Method 1: Manual Installation
+### Method 1: Install from .fpa Package (Recommended)
+
+The easiest way to install this plugin is using the `.fpa` (FeatherPanel Plugin Archive) package:
+
+1. **Download or build the .fpa package**:
+   - Download `CustomBranding-v1.0.0.fpa` from releases
+   - Or build it yourself: `./build.sh` (see [BUILD.md](BUILD.md))
+
+2. **Upload to FeatherPanel**:
+   - Log into your FeatherPanel admin dashboard
+   - Navigate to **Plugins** or **Addons** section
+   - Click **Upload Plugin** or **Install Plugin**
+   - Select the `.fpa` file and click **Install**
+   - Enable the plugin once installation completes
+
+**Advantages**: One-click installation, automatic setup, easy updates
+
+### Method 2: Manual Installation from .fpa
+
+If your admin panel doesn't support .fpa uploads:
+
+1. Extract the .fpa file (it's a ZIP archive):
+   ```bash
+   unzip CustomBranding-v1.0.0.fpa -d /path/to/featherpanel/plugins/
+   ```
+2. Set permissions:
+   ```bash
+   chown -R www-data:www-data /path/to/featherpanel/plugins/CustomBranding
+   chmod -R 755 /path/to/featherpanel/plugins/CustomBranding
+   ```
+3. Restart FeatherPanel:
+   ```bash
+   systemctl restart featherpanel
+   ```
+
+### Method 3: Install from Source
+
+For development or customization:
 
 1. Download or clone this repository
 2. Copy the `CustomBranding` folder to your FeatherPanel plugins directory:
@@ -32,13 +69,21 @@ A powerful plugin for FeatherPanel (by MysticsSystems) that removes all default 
    systemctl restart featherpanel
    ```
 
-### Method 2: Using FeatherPanel Admin
+**Complete installation instructions**: See [INSTALLATION.md](INSTALLATION.md)
 
-1. Go to your FeatherPanel admin dashboard
-2. Navigate to **Plugins** or **Addons** section
-3. Click **Upload Plugin** or **Install from ZIP**
-4. Upload the `CustomBranding` folder (as a ZIP file)
-5. Enable the plugin from the plugins list
+## Building the Plugin Package
+
+To create a `.fpa` package for distribution:
+
+```bash
+# Run the build script
+./build.sh
+
+# Find the package in dist/
+ls dist/CustomBranding-v1.0.0.fpa
+```
+
+**Complete build instructions**: See [BUILD.md](BUILD.md)
 
 ## Configuration
 

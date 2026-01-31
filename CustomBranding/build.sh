@@ -156,6 +156,12 @@ else
     exit 1
 fi
 
+# Copy package README alongside the .fpa file
+if [ -f "PACKAGE_README.md" ]; then
+    cp PACKAGE_README.md "$DIST_DIR/README-PACKAGE.txt"
+    print_status "Package README created"
+fi
+
 echo ""
 
 # Get package information

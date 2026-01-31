@@ -59,6 +59,9 @@ cd CustomBranding
 
 # Run the build script
 ./build.sh
+
+# Verify the package (optional but recommended)
+./verify.sh
 ```
 
 The packaged `.fpa` file will be created in the `dist/` directory.
@@ -79,6 +82,39 @@ To see detailed package contents:
 ./build.sh --verbose
 # OR
 ./build.sh -v
+```
+
+### Verifying the Package
+
+After building, verify the package integrity:
+
+```bash
+./verify.sh
+```
+
+The verification script checks:
+- ZIP file integrity
+- Required files presence
+- JSON file validity
+- Directory structure
+- File sizes and content
+- No unwanted files included
+
+## Build and Verify Workflow
+
+Complete workflow for creating a distribution-ready package:
+
+```bash
+# 1. Build the package
+./build.sh
+
+# 2. Verify the package
+./verify.sh
+
+# 3. (Optional) View package contents
+./build.sh --verbose
+# OR
+unzip -l dist/CustomBranding-v1.0.0.fpa
 ```
 
 ## Build Process Explained

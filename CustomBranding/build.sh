@@ -82,14 +82,19 @@ echo ""
 # Files to include in the package
 print_info "Copying plugin files..."
 
-# Core plugin files
-cp addon.json "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  addon.json (plugin manifest)"
-cp package.json "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  package.json (package metadata)"
-cp config.json "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  config.json (default configuration)"
-cp config.example.json "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  config.example.json (example configuration)"
+# Core plugin files (FeatherPanel v2)
+cp conf.yml "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  conf.yml (plugin configuration - REQUIRED)"
+cp Plugin.php "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  Plugin.php (main plugin class)"
+
+# Legacy files (for backwards compatibility)
+cp addon.json "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  addon.json (plugin manifest - legacy)"
+cp package.json "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  package.json (package metadata - legacy)"
+cp config.json "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  config.json (default configuration - legacy)"
+cp config.example.json "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  config.example.json (example configuration - legacy)"
 
 # Source code
-cp -r src "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  src/ (plugin source code)"
+cp -r src "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  src/ (plugin source code - legacy)"
+cp -r events "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  events/ (event handlers)"
 
 # Assets
 cp -r assets "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  assets/ (CSS and other assets)"
@@ -100,6 +105,7 @@ cp -r examples "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  example
 # Documentation
 cp LICENSE "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  LICENSE (MIT license)"
 cp README.md "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  README.md (main documentation)"
+cp README_PHP.md "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  README_PHP.md (PHP/v2 documentation)"
 cp INSTALLATION.md "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  INSTALLATION.md (installation guide)"
 cp QUICKSTART.md "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  QUICKSTART.md (quick start guide)"
 cp CHANGELOG.md "$BUILD_DIR/$PLUGIN_NAME/" 2>/dev/null && print_status "  CHANGELOG.md (version history)"
@@ -122,9 +128,8 @@ echo ""
 # Verify required files
 print_info "Verifying package contents..."
 REQUIRED_FILES=(
-    "$BUILD_DIR/$PLUGIN_NAME/addon.json"
-    "$BUILD_DIR/$PLUGIN_NAME/src/index.js"
-    "$BUILD_DIR/$PLUGIN_NAME/config.json"
+    "$BUILD_DIR/$PLUGIN_NAME/conf.yml"
+    "$BUILD_DIR/$PLUGIN_NAME/Plugin.php"
 )
 
 all_present=true

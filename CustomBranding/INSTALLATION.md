@@ -15,40 +15,87 @@ Before installing the plugin, ensure you have:
 
 ### Step 1: Download the Plugin
 
-Download the latest version of the Custom Branding Plugin from the repository.
+Download the latest version of the Custom Branding Plugin:
+
+- **Recommended**: Download the `.fpa` package file from releases
+- **Alternative**: Download the source code from the repository
 
 ### Step 2: Install the Plugin
 
-#### Option A: Via FeatherPanel Admin Panel (Recommended)
+#### Option A: Install from .fpa Package (Recommended)
 
-1. Log into your FeatherPanel admin dashboard
-2. Navigate to **Settings** → **Plugins** (or **Addons**)
-3. Click **Upload Plugin** or **Add New Plugin**
-4. Select the `CustomBranding` folder (as ZIP file) from your computer
-5. Click **Install**
-6. Once installed, click **Enable** to activate the plugin
+The `.fpa` (FeatherPanel Plugin Archive) format is the easiest installation method.
 
-#### Option B: Manual Installation
+1. **Download the .fpa file**
+   - Get `CustomBranding-v1.0.0.fpa` from releases
+   - Or build it yourself (see [BUILD.md](BUILD.md))
 
-1. Connect to your server via SSH or SFTP
-2. Navigate to your FeatherPanel plugins directory:
+2. **Upload via Admin Panel**
+   - Log into your FeatherPanel admin dashboard
+   - Navigate to **Settings** → **Plugins** (or **Addons**)
+   - Click **Upload Plugin** or **Install Plugin**
+   - Click **Choose File** and select the `.fpa` file
+   - Click **Install** or **Upload**
+   - Wait for the upload and installation to complete
+
+3. **Enable the Plugin**
+   - Once installed, find "Custom Branding Plugin" in the plugins list
+   - Click **Enable** or **Activate**
+   - The plugin is now active!
+
+**Advantages of .fpa installation:**
+- ✅ One-click installation
+- ✅ Automatic file extraction
+- ✅ Automatic permission setup
+- ✅ Version management
+- ✅ Easy updates
+
+#### Option B: Manual Installation from .fpa
+
+If your FeatherPanel admin panel doesn't support .fpa uploads:
+
+1. **Extract the .fpa file** (it's a ZIP archive):
    ```bash
-   cd /path/to/featherpanel/plugins/
+   unzip CustomBranding-v1.0.0.fpa -d /path/to/featherpanel/plugins/
    ```
-3. Copy the `CustomBranding` folder to this directory:
+
+2. **Set proper permissions**:
    ```bash
-   cp -r /path/to/downloaded/CustomBranding /path/to/featherpanel/plugins/
+   sudo chown -R www-data:www-data /path/to/featherpanel/plugins/CustomBranding
+   sudo chmod -R 755 /path/to/featherpanel/plugins/CustomBranding
    ```
-4. Set proper permissions:
-   ```bash
-   chown -R www-data:www-data CustomBranding
-   chmod -R 755 CustomBranding
-   ```
-5. Restart FeatherPanel:
+
+3. **Restart FeatherPanel**:
    ```bash
    systemctl restart featherpanel
    # OR
    service featherpanel restart
+   ```
+
+#### Option C: Install from Source (Development)
+
+For development or if you want to modify the plugin:
+
+1. **Clone or download the repository**
+   ```bash
+   git clone https://github.com/2IceCube/CX.git
+   cd CX
+   ```
+
+2. **Copy plugin to FeatherPanel**
+   ```bash
+   cp -r CustomBranding /path/to/featherpanel/plugins/
+   ```
+
+3. **Set proper permissions**
+   ```bash
+   sudo chown -R www-data:www-data /path/to/featherpanel/plugins/CustomBranding
+   sudo chmod -R 755 /path/to/featherpanel/plugins/CustomBranding
+   ```
+
+4. **Restart FeatherPanel**
+   ```bash
+   systemctl restart featherpanel
    ```
 
 ### Step 3: Verify Installation
